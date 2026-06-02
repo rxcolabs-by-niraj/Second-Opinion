@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pune Second Opinion Portal | Precision Medical Navigation</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter & Plus Jakarta Sans Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        accent: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans leading-relaxed">
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center gap-3">
+                        <div class="bg-gradient-to-tr from-brand-600 to-accent-600 text-white p-2.5 rounded-xl shadow-md shadow-brand-500/10">
+                            <i class="fa-solid fa-house-medical-shield text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="font-heading font-extrabold text-xl tracking-tight bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">PuneSecondOpinion</span>
+                            <span class="block text-[10px] font-medium tracking-wider text-slate-500 uppercase">Precision Medical Navigation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#how-it-works" class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">Why A Second Opinion</a>
+                    <a href="#doctor-directory" class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">Doctor Directory</a>
+                    <a href="#about-triage" class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">How We Help</a>
+                    <a href="#contact" class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-700 hover:to-brand-800 shadow-lg shadow-brand-600/20 transition-all transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-calculator-medical mr-2"></i> Free Case Matchmaking
+                    </a>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-slate-600 hover:text-brand-600 focus:outline-none p-2 rounded-lg hover:bg-slate-50">
+                        <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-6 space-y-3">
+            <a href="#how-it-works" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-600">Why A Second Opinion</a>
+            <a href="#doctor-directory" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-600">Doctor Directory</a>
+            <a href="#about-triage" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-600">How We Help</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block text-center px-4 py-3 rounded-xl text-base font-semibold text-white bg-brand-600 shadow-lg shadow-brand-600/10">
+                <i class="fa-solid fa-calculator-medical mr-2"></i> Free Case Matchmaking
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative overflow-hidden bg-slate-900 text-white py-16 sm:py-24">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,197,94,0.1),transparent_45%)]"></div>
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-brand-700/10 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-brand-500/10 border border-brand-500/20 text-brand-400 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-2">
+                        <span class="flex h-2 w-2 rounded-full bg-brand-500 animate-ping"></span>
+                        Unbiased, Independent Clinical Navigation
+                    </div>
+                    <!-- Grammatically corrected tagline with 'Second Opinion' set in white -->
+                    <h1 class="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-tight text-slate-100">
+                        Your Guide to Seeking an Expert Medical <span class="text-white underline decoration-brand-500 decoration-3">Second Opinion</span> for Your Precision Treatment
+                    </h1>
+                    <p class="text-slate-300 text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Access an independent, handpicked directory of Pune's leading superspecialists from premier hospital networks. Match your diagnostics and treatment path with the most qualified consultant to optimize your clinical outcomes.
+                    </p>
+                    <div class="pt-4 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <a href="#doctor-directory" class="px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white font-semibold rounded-xl shadow-lg shadow-brand-600/35 transition-all transform hover:-translate-y-1 text-center">
+                            Explore Top Doctors
+                        </a>
+                        <a href="#about-triage" class="px-8 py-4 bg-slate-800/80 hover:bg-slate-800 text-slate-100 font-semibold rounded-xl border border-slate-700 transition-all hover:border-slate-600 text-center">
+                            How Navigation Works
+                        </a>
+                    </div>
+                    <div class="pt-6 grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0 border-t border-slate-800 text-center lg:text-left">
+                        <div>
+                            <p class="text-3xl font-heading font-extrabold text-white">42</p>
+                            <p class="text-xs text-slate-400">Elite Specialists</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-heading font-extrabold text-white">7</p>
+                            <p class="text-xs text-slate-400">Therapeutic Areas</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-heading font-extrabold text-white">7+</p>
+                            <p class="text-xs text-slate-400">Major Networks Covered</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Quick Finder Dashboard -->
+                <div class="lg:col-span-5">
+                    <div class="bg-slate-800/80 backdrop-blur-md border border-slate-700/60 p-6 rounded-2xl shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-accent-500/5 rounded-full blur-2xl"></div>
+                        <h3 class="font-heading font-bold text-xl text-white mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-magnifying-glass-chart text-brand-400"></i> Second Opinion Finder
+                        </h3>
+                        <p class="text-xs text-slate-400 mb-6">Select a specialty below to query corresponding medical leaders across Pune's premier networks.</p>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Medical Specialty</label>
+                                <select id="hero-specialty" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                    <option value="all">All Specialties</option>
+                                    <option value="cardiology">Cardiology (Heart)</option>
+                                    <option value="oncology">Oncology (Cancer)</option>
+                                    <option value="nephrology">Nephrology (Kidney)</option>
+                                    <option value="neurology">Neurology (Brain & Nervous System)</option>
+                                    <option value="pulmonology">Pulmonology (Respiratory)</option>
+                                    <option value="gastroenterology">Gastroenterology (Digestive Tract)</option>
+                                    <option value="gynaecology">Gynaecology & Obstetrics</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Hospital Network</label>
+                                <select id="hero-hospital" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                    <option value="all">Any Hospital in Pune</option>
+                                    <option value="Deenanath Mangeshkar Hospital">Deenanath Mangeshkar Hospital</option>
+                                    <option value="Ruby Hall Clinic">Ruby Hall Clinic</option>
+                                    <option value="Sahyadri Hospital">Sahyadri Hospital</option>
+                                    <option value="Jupiter Hospital">Jupiter Hospital</option>
+                                    <option value="Jehangir Hospital">Jehangir Hospital</option>
+                                    <option value="Manipal Hospital">Manipal Hospitals</option>
+                                    <option value="MJM Hospital">MJM Hospital</option>
+                                </select>
+                            </div>
+                            <button onclick="handleHeroSearch()" class="w-full mt-2 py-3.5 px-4 bg-gradient-to-r from-brand-500 to-accent-600 hover:from-brand-600 hover:to-accent-700 text-white font-bold rounded-xl transition-all shadow-md shadow-brand-500/10 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-stethoscope"></i> Filter Doctor Directory
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Educational Section -->
+    <section id="how-it-works" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-xs font-bold tracking-widest text-accent-600 uppercase bg-accent-50 px-3.5 py-1.5 rounded-full">Understanding Clinical Validation</span>
+                <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900">
+                    Why Seek a Second Opinion?
+                </h2>
+                <p class="text-slate-600">
+                    A clinical second opinion provides diagnostic security, maps therapeutic options according to the latest research, and matches your genetic, biomarker, and health profile to a highly precise treatment regimen.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-slate-50 border border-slate-200/50 p-8 rounded-2xl relative group hover:shadow-xl hover:bg-white hover:border-brand-100 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center font-bold text-xl mb-6">
+                        01
+                    </div>
+                    <h4 class="font-heading font-extrabold text-lg text-slate-900 mb-2">Prevent Treatment Mismatches</h4>
+                    <p class="text-sm text-slate-600">
+                        Evidence indicates that substantial updates to treatment plans or diagnostic clarifications occur in approximately 15% to 20% of high-complexity medical cases evaluated by tertiary experts.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-50 border border-slate-200/50 p-8 rounded-2xl relative group hover:shadow-xl hover:bg-white hover:border-brand-100 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-accent-100 text-accent-700 flex items-center justify-center font-bold text-xl mb-6">
+                        02
+                    </div>
+                    <h4 class="font-heading font-extrabold text-lg text-slate-900 mb-2">Access Targeted Technologies</h4>
+                    <p class="text-sm text-slate-600">
+                        Different premier centers house distinct clinical equipment, surgical platforms, and access protocols. An alternative expert may advise a non-invasive treatment instead of active surgery.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-50 border border-slate-200/50 p-8 rounded-2xl relative group hover:shadow-xl hover:bg-white hover:border-brand-100 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-xl mb-6">
+                        03
+                    </div>
+                    <h4 class="font-heading font-extrabold text-lg text-slate-900 mb-2">Scientific Clarity</h4>
+                    <p class="text-sm text-slate-600">
+                        Assurance that your critical decisions have been independently peer-reviewed helps families choose complex clinical paths with conviction, clarity, and peace of mind.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Hospital Partners Spotlight -->
+            <div class="mt-16 border-t border-slate-100 pt-16">
+                <p class="text-center text-xs font-semibold text-slate-400 tracking-wider uppercase mb-8">Accessing Pune's Premier Medical Networks</p>
+                <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-6 text-center items-center opacity-80">
+                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/40 font-heading font-bold text-xs text-slate-600">Deenanath Mangeshkar</div>
+                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/40 font-heading font-bold text-xs text-slate-600">Ruby Hall Clinic</div>
+                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/40 font-heading font-bold text-xs text-slate-600">Sahyadri Hospital</div>
+                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/40 font-heading font-bold text-xs text-slate-600">Jupiter Hospital</div>
+                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/40 font-heading font-bold text-xs text-slate-600">Jehangir Hospital</div>
+                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/40 font-heading font-bold text-xs text-slate-600">Manipal Hospitals</div>
+                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/40 font-heading font-bold text-xs text-slate-600">MJM Hospital</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Directory Section -->
+    <section id="doctor-directory" class="py-20 bg-slate-50 border-t border-b border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-xs font-bold tracking-widest text-brand-600 uppercase bg-brand-50 px-3.5 py-1.5 rounded-full">Validated Specialist Base</span>
+                <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900">
+                    Elite Medical Specialist Directory
+                </h2>
+                <p class="text-slate-600">
+                    Filter by specialty or hospital to identify highly qualified consultants in Pune. Shortlist options to review qualifications, focus areas, and to request a guided case triage.
+                </p>
+            </div>
+
+            <!-- Controls (Search & Filters) -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-6 mb-10">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                    <!-- Search Input -->
+                    <div class="md:col-span-6 relative">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                        <input id="search-input" onkeyup="filterDoctors()" type="text" placeholder="Search by name, qualifications, research, clinical focus..." class="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all">
+                    </div>
+                    
+                    <!-- Hospital Select -->
+                    <div class="md:col-span-3">
+                        <select id="hospital-select" onchange="filterDoctors()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all">
+                            <option value="all">🏥 All Hospitals</option>
+                            <option value="Deenanath Mangeshkar Hospital">Deenanath Mangeshkar</option>
+                            <option value="Ruby Hall Clinic">Ruby Hall Clinic</option>
+                            <option value="Sahyadri Hospital">Sahyadri Hospital</option>
+                            <option value="Jupiter Hospital">Jupiter Hospital</option>
+                            <option value="Jehangir Hospital">Jehangir Hospital</option>
+                            <option value="Manipal Hospital">Manipal Hospital</option>
+                            <option value="MJM Hospital">MJM Hospital</option>
+                        </select>
+                    </div>
+
+                    <!-- Layout Count indicator -->
+                    <div class="md:col-span-3 flex items-center justify-end">
+                        <span id="results-count" class="text-xs font-semibold text-slate-500 bg-slate-100 py-2.5 px-4 rounded-xl w-full text-center md:w-auto">
+                            Showing all 42 doctors
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Specialty Quick Filters -->
+                <div>
+                    <span class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Browse by Specialty</span>
+                    <div class="flex flex-wrap gap-2" id="specialty-tabs-container">
+                        <!-- Dynamic Tabs will load here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor Directory Grid -->
+            <div id="doctor-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Dynamic cards populated via JS -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="empty-state" class="hidden text-center py-16 bg-white border border-slate-200/80 rounded-2xl">
+                <div class="w-16 h-16 bg-slate-100 text-slate-400 flex items-center justify-center rounded-full mx-auto mb-4">
+                    <i class="fa-solid fa-user-slash text-2xl"></i>
+                </div>
+                <h4 class="font-heading font-bold text-lg text-slate-800">No doctors match your filters</h4>
+                <p class="text-slate-500 text-sm mt-1">Try resetting the hospital selection or searching with general terms.</p>
+                <button onclick="resetFilters()" class="mt-4 px-5 py-2.5 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-xl text-xs transition-all">
+                    Reset All Filters
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shortlist Comparison Sidebar/Drawer Component -->
+    <div id="compare-drawer" class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-slate-200 shadow-2xl z-50 transform translate-y-full transition-transform duration-300 ease-in-out">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="p-2.5 bg-brand-50 text-brand-600 rounded-xl">
+                        <i class="fa-solid fa-code-compare text-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-heading font-extrabold text-sm text-slate-900">Compare Shortlisted Experts</h4>
+                        <p class="text-xs text-slate-500">Compare qualifications and focus side-by-side (up to 3 specialists).</p>
+                    </div>
+                </div>
+
+                <!-- Shortlisted Doctors Avatars -->
+                <div id="shortlist-avatars" class="flex items-center gap-3">
+                    <!-- Dynamic Items -->
+                </div>
+
+                <div class="flex gap-2">
+                    <button onclick="toggleCompareModal()" class="px-5 py-2.5 bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs rounded-xl shadow-md shadow-brand-500/10 transition-all">
+                        Compare Details
+                    </button>
+                    <button onclick="clearShortlist()" class="px-4 py-2.5 border border-slate-200 hover:bg-slate-50 text-slate-600 text-xs font-semibold rounded-xl transition-all">
+                        Clear
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comparison Modal -->
+    <div id="compare-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-100">
+            <div class="p-6 border-b border-slate-100 flex justify-between items-center sticky top-0 bg-white z-10">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-code-compare text-brand-600 text-xl"></i>
+                    <h3 class="font-heading font-extrabold text-xl text-slate-900">Specialist Side-by-Side Comparison</h3>
+                </div>
+                <button onclick="toggleCompareModal()" class="w-10 h-10 bg-slate-50 hover:bg-slate-100 text-slate-500 rounded-full flex items-center justify-center transition-all">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            
+            <div class="p-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="compare-grid-container">
+                    <!-- Dynamic Comparison columns populated here -->
+                </div>
+            </div>
+            
+            <div class="p-6 border-t border-slate-100 bg-slate-50 flex justify-end">
+                <button onclick="toggleCompareModal()" class="px-6 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition-all">
+                    Close Comparison
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Triage Protocol & Bio Section -->
+    <section id="about-triage" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Triage and Navigation Explanation -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-accent-50 text-accent-700 px-4 py-1 rounded-full text-xs font-semibold tracking-wider uppercase">
+                        <i class="fa-solid fa-compass-drafting"></i> Clinical Triage & Navigation
+                    </div>
+                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900">
+                        How Independent Clinical Case Matching Works
+                    </h2>
+                    <p class="text-slate-600 text-base">
+                        Finding the right doctor for a complex diagnosis requires matching the specific pathology of your case to a physician with high clinical volume in that exact sub-focus. General listings can be overwhelming. Through structured triage, we map your current lab metrics, medications, and disease subtype to targeted consultants in Pune.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+                        <div class="p-5 bg-slate-50 border border-slate-100 rounded-xl">
+                            <div class="w-10 h-10 rounded-lg bg-brand-100 text-brand-700 flex items-center justify-center mb-3">
+                                <i class="fa-solid fa-folder-open text-lg"></i>
+                            </div>
+                            <h5 class="font-heading font-bold text-slate-900 mb-1">Pre-Opinion Synthesis</h5>
+                            <p class="text-xs text-slate-500">We outline diagnostic timelines, consolidate active therapies, and formulate focused questions prior to your consultant evaluation.</p>
+                        </div>
+                        <div class="p-5 bg-slate-50 border border-slate-100 rounded-xl">
+                            <div class="w-10 h-10 rounded-lg bg-accent-100 text-accent-700 flex items-center justify-center mb-3">
+                                <i class="fa-solid fa-arrows-spin text-lg"></i>
+                            </div>
+                            <h5 class="font-heading font-bold text-slate-900 mb-1">Sub-Specialty Alignment</h5>
+                            <p class="text-xs text-slate-500">Your diagnosis is linked directly with a specialist in Pune who has dedicated academic or research publications in that exact pathology.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Toned-down Dr. Niraj Bafna Profile Sidebar Card -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-sm">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-brand-600 to-accent-500 rounded-3xl transform rotate-3 scale-102 opacity-5 shadow-xl"></div>
+                        <div class="relative bg-slate-50 border border-slate-200/80 p-8 rounded-3xl shadow-xl">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-12 h-12 rounded-xl bg-slate-800 text-white flex items-center justify-center text-lg font-bold font-heading shadow-inner">
+                                    NB
+                                </div>
+                                <div>
+                                    <h4 class="font-heading font-bold text-lg text-slate-900">Dr. Niraj Bafna</h4>
+                                    <p class="text-xs text-brand-600 font-semibold">Doctor of Pharmacy (Pharm.D)</p>
+                                </div>
+                            </div>
+                            
+                            <p class="text-xs text-slate-600 italic mb-6">
+                                "The difference between standard treatment and precision outcomes often lies in identifying the correct specialist with the right diagnostic experience. We offer patients an objective bridge."
+                            </p>
+
+                            <div class="space-y-3.5 border-t border-slate-200/80 pt-5 text-xs text-slate-600">
+                                <div class="flex gap-3">
+                                    <i class="fa-solid fa-graduation-cap text-slate-400 mt-1"></i>
+                                    <span><strong>Clinical Liaison:</strong> Decodes complex pathology markers and therapeutic drug regimens.</span>
+                                </div>
+                                <div class="flex gap-3">
+                                    <i class="fa-solid fa-shield-halved text-slate-400 mt-1"></i>
+                                    <span><strong>Independent Advisor:</strong> Unbiased evaluation with no commercial hospital affiliations.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Form and Consultation Section -->
+    <section id="contact" class="py-20 bg-slate-900 text-white relative">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.08),transparent_40%)]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Contact Context Column -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-bold tracking-widest text-brand-400 uppercase bg-brand-500/10 px-3.5 py-1.5 rounded-full">Clinical Referral Desk</span>
+                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl">
+                        Request Guided Second Opinion Matching
+                    </h2>
+                    <p class="text-slate-300 text-sm">
+                        Fill out the case outline below. Our clinical navigation desk will analyze your diagnosis metrics, cross-examine current therapy guidelines, and help you construct a tailored roadmap to consult the correct specialist.
+                    </p>
+
+                    <div class="p-6 bg-slate-800/60 border border-slate-700/80 rounded-2xl space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-brand-500/10 text-brand-400 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-shield-halved text-base"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-sm text-slate-100">Confidential Handling</h5>
+                                <p class="text-xs text-slate-400 mt-1">All clinical summaries, diagnostic parameters, and attached documents are kept strictly confidential.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-accent-500/10 text-accent-400 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-clock text-base"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-sm text-slate-100">Direct Doctor Routing</h5>
+                                <p class="text-xs text-slate-400 mt-1">Triage requests are reviewed to facilitate scheduling directly through respective consultant offices.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial Slider / Static Quote -->
+                    <div class="p-6 border-l-4 border-brand-500 bg-slate-800/40 rounded-r-2xl">
+                        <p class="text-[10px] text-slate-400 uppercase tracking-widest mb-1 font-bold">Patient Feedback</p>
+                        <p class="text-xs italic text-slate-300">"The triage review helped our family pinpoint the precise interventional specialist. It saved us from running around multiple hospital systems blindly."</p>
+                        <p class="text-[11px] text-brand-400 mt-2 font-semibold">— Mr. Amit Joshi (Kothrud, Pune)</p>
+                    </div>
+                </div>
+
+                <!-- Form Card Column -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white text-slate-800 p-8 rounded-2xl border border-slate-200/80 shadow-2xl relative">
+                        <h3 class="font-heading font-extrabold text-xl mb-2 text-slate-900">Case Evaluation Profile</h3>
+                        <p class="text-xs text-slate-500 mb-6">Complete the fields below to sync your record parameters with candidate physicians.</p>
+                        
+                        <form id="consult-form" onsubmit="handleFormSubmission(event)" class="space-y-4">
+                            <!-- Dual Grid Name and Phone -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-slate-500 tracking-wider mb-1.5">Patient Full Name <span class="text-red-500">*</span></label>
+                                    <input required type="text" id="form-name" placeholder="E.g., Sanjay Deshpande" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-slate-500 tracking-wider mb-1.5">WhatsApp / Contact Number <span class="text-red-500">*</span></label>
+                                    <input required type="tel" id="form-phone" placeholder="E.g., +91 98765 43210" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all">
+                                </div>
+                            </div>
+
+                            <!-- Dual Grid Email and Specialty -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-slate-500 tracking-wider mb-1.5">Email Address</label>
+                                    <input type="email" id="form-email" placeholder="E.g., sanjay@example.com" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-slate-500 tracking-wider mb-1.5">Primary Medical Specialty <span class="text-red-500">*</span></label>
+                                    <select required id="form-specialty" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all">
+                                        <option value="" disabled selected>Choose Specialty</option>
+                                        <option value="Cardiology">Cardiology (Heart)</option>
+                                        <option value="Oncology">Oncology (Cancer)</option>
+                                        <option value="Nephrology">Nephrology (Kidney)</option>
+                                        <option value="Neurology">Neurology (Brain/Nerves)</option>
+                                        <option value="Pulmonology">Pulmonology (Respiratory)</option>
+                                        <option value="Gastroenterology">Gastroenterology (Digestive)</option>
+                                        <option value="Gynaecology">Gynaecology & Obstetrics</option>
+                                        <option value="Other">Other / Unsure</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Current Diagnosis details -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-slate-500 tracking-wider mb-1.5">Current Primary Hospital (First Opinion)</label>
+                                    <input type="text" id="form-first-opinion" placeholder="E.g., Local Practitioner or Hospital" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-slate-500 tracking-wider mb-1.5">Preferred Second-Opinion Network</label>
+                                    <select id="form-preferred-hospital" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all">
+                                        <option value="Any">Unsure / Any Top Pune Hospital</option>
+                                        <option value="Deenanath Mangeshkar Hospital">Deenanath Mangeshkar Hospital</option>
+                                        <option value="Ruby Hall Clinic">Ruby Hall Clinic</option>
+                                        <option value="Sahyadri Hospital">Sahyadri Hospital</option>
+                                        <option value="Jupiter Hospital">Jupiter Hospital</option>
+                                        <option value="Jehangir Hospital">Jehangir Hospital</option>
+                                        <option value="Manipal Hospital">Manipal Hospital</option>
+                                        <option value="MJM Hospital">MJM Hospital</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Auto-Filled Doctor Reference -->
+                            <div id="referred-doctor-box" class="hidden p-3 bg-brand-50 border border-brand-100 rounded-xl flex items-center justify-between">
+                                <span class="text-xs text-brand-800 font-semibold" id="referred-doctor-label"></span>
+                                <button type="button" onclick="clearReferredDoctor()" class="text-xs text-red-500 hover:text-red-700 underline">Remove</button>
+                            </div>
+
+                            <!-- Case Narrative / Summary text -->
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-500 tracking-wider mb-1.5">Primary Symptoms, Diagnosis & Active Medications <span class="text-red-500">*</span></label>
+                                <textarea required id="form-narrative" rows="4" placeholder="Briefly detail the active diagnosis, key diagnostic tests run so far, and specific queries for the consultant..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all"></textarea>
+                            </div>
+
+                            <!-- Simulated File Upload -->
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-500 tracking-wider mb-1.5">Attach Reports or Medical Files (Optional)</label>
+                                <div id="upload-zone" class="border-2 border-dashed border-slate-200 rounded-xl p-4 text-center hover:bg-slate-50 transition-all cursor-pointer relative">
+                                    <input type="file" id="form-file" onchange="handleFileUpload(event)" class="absolute inset-0 opacity-0 cursor-pointer">
+                                    <div class="space-y-1">
+                                        <i class="fa-solid fa-cloud-arrow-up text-slate-400 text-xl"></i>
+                                        <p class="text-xs text-slate-600 font-semibold" id="upload-label">Drag & drop files or click to browse</p>
+                                        <p class="text-[10px] text-slate-400">PDF, JPG or PNG format supported (Max 10MB)</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Button submit -->
+                            <button type="submit" class="w-full py-4 px-6 bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-700 hover:to-brand-800 text-white font-heading font-extrabold text-sm rounded-xl transition-all shadow-xl shadow-brand-600/15 tracking-wider uppercase">
+                                Submit for Clinical Matchmaking
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Toast Notification Container -->
+    <div id="toast-container" class="fixed top-24 right-4 sm:right-8 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="font-heading font-extrabold text-2xl sm:text-3xl text-slate-900 text-center mb-10">Frequently Asked Questions</h3>
+            
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="bg-white border border-slate-200/60 rounded-xl overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(1)" class="w-full px-6 py-4 text-left font-bold text-slate-800 flex justify-between items-center hover:bg-slate-50 transition-colors">
+                        <span>How does the clinical matchmaking process assist me?</span>
+                        <i id="faq-chevron-1" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-answer-1" class="hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-50 pt-3">
+                        We analyze your medical records, laboratory parameters, and active therapies. Instead of picking a general physician, we align your specific disease parameters with a consultant in Pune who actively handles high caseloads in that exact medical niche.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-white border border-slate-200/60 rounded-xl overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(2)" class="w-full px-6 py-4 text-left font-bold text-slate-800 flex justify-between items-center hover:bg-slate-50 transition-colors">
+                        <span>Is there a commercial fee for directory matching?</span>
+                        <i id="faq-chevron-2" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-answer-2" class="hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-50 pt-3">
+                        The directory and initial matchmaking roadmap parameters are entirely open and free. Our mission is to facilitate objective patient advocacy and direct connectivity with Pune's independent expert consultants.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-white border border-slate-200/60 rounded-xl overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(3)" class="w-full px-6 py-4 text-left font-bold text-slate-800 flex justify-between items-center hover:bg-slate-50 transition-colors">
+                        <span>Will my primary physician be supportive of a second opinion?</span>
+                        <i id="faq-chevron-3" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-answer-3" class="hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-50 pt-3">
+                        Modern medical guidelines encourage professional peer collaboration. Seeking a clinical validation ensures you explore all precision therapeutic strategies available and acts as standard practice for complex cases.
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="bg-white border border-slate-200/60 rounded-xl overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(4)" class="w-full px-6 py-4 text-left font-bold text-slate-800 flex justify-between items-center hover:bg-slate-50 transition-colors">
+                        <span>Are the listed doctors actively practicing in Pune?</span>
+                        <i id="faq-chevron-4" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-answer-4" class="hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-50 pt-3">
+                        Yes. The specialists represent senior department heads, academic researchers, and renowned clinical consultants across leading hospital institutions including Ruby Hall, Deenanath Mangeshkar, Jupiter, Sahyadri, Jehangir, Manipal, and MJM.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-slate-900 text-slate-400 text-sm border-t border-slate-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
+                <!-- Brand Column -->
+                <div class="md:col-span-4 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-brand-600 text-white p-2 rounded-xl">
+                            <i class="fa-solid fa-house-medical-shield text-lg"></i>
+                        </div>
+                        <span class="font-heading font-extrabold text-lg text-white">PuneSecondOpinion</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        An independent medical discovery and case-matching directory designed to guide patients in Maharashtra toward evidence-based, precision therapeutic validation.
+                    </p>
+                </div>
+
+                <!-- Specialties Quick List -->
+                <div class="md:col-span-4">
+                    <h5 class="font-heading font-bold text-white text-xs uppercase tracking-wider mb-4">Core Medical Specialties</h5>
+                    <ul class="grid grid-cols-2 gap-2 text-xs">
+                        <li><a href="#doctor-directory" onclick="setSpecialtyFilter('cardiology')" class="hover:text-brand-400 transition-colors">Cardiology</a></li>
+                        <li><a href="#doctor-directory" onclick="setSpecialtyFilter('oncology')" class="hover:text-brand-400 transition-colors">Oncology</a></li>
+                        <li><a href="#doctor-directory" onclick="setSpecialtyFilter('nephrology')" class="hover:text-brand-400 transition-colors">Nephrology</a></li>
+                        <li><a href="#doctor-directory" onclick="setSpecialtyFilter('neurology')" class="hover:text-brand-400 transition-colors">Neurology</a></li>
+                        <li><a href="#doctor-directory" onclick="setSpecialtyFilter('pulmonology')" class="hover:text-brand-400 transition-colors">Pulmonology</a></li>
+                        <li><a href="#doctor-directory" onclick="setSpecialtyFilter('gastroenterology')" class="hover:text-brand-400 transition-colors">Gastroenterology</a></li>
+                        <li><a href="#doctor-directory" onclick="setSpecialtyFilter('gynaecology')" class="hover:text-brand-400 transition-colors">Gynaecology</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Location Info -->
+                <div class="md:col-span-4 space-y-3 text-xs">
+                    <h5 class="font-heading font-bold text-white uppercase tracking-wider">Clinical Coordination Support</h5>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-user-doctor text-brand-400"></i> Lead Coordinator: Dr. Niraj Bafna, Pharm.D</p>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-envelope text-brand-400"></i> niraj.bafna.pharmd@gmail.com</p>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-400"></i> Pune, Maharashtra, India</p>
+                </div>
+            </div>
+
+            <!-- Disclaimer and Rights -->
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
+                <p>&copy; 2026 PuneSecondOpinion. All rights reserved.</p>
+                <p class="max-w-xl text-center md:text-right text-[10px] text-slate-500 leading-relaxed">
+                    <strong>Medical Disclaimer:</strong> This portal functions exclusively as an educational recommendation directory and triage resource. It does not replace medical emergencies or direct physician diagnostics. Call regional emergency services (108) for critical, acute medical events.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Operations -->
+    <script>
+        // Elite Doctor Database (42 Specialists across 7 Departments)
+        const doctorDatabase = [
+            // CARDIOLOGY (6 Doctors)
+            {
+                id: "cardio-1",
+                name: "Dr. Puravez Grant",
+                qualification: "MD, DM, FCPS, FSCAI (USA), FACC",
+                specialty: "cardiology",
+                specialtyLabel: "Cardiology",
+                hospital: "Ruby Hall Clinic",
+                subSpecialty: "Interventional Cardiology & Coronary Angioplasty",
+                experience: "35+ Years",
+                rating: "4.9",
+                contact: "+91 20 6645 5100",
+                about: "Chief Cardiologist & Managing Trustee of Ruby Hall Clinic. Widely considered one of the pioneers of advanced interventional treatments in Pune."
+            },
+            {
+                id: "cardio-2",
+                name: "Dr. Jagdish Hiremath",
+                qualification: "MD, DM, FACC",
+                specialty: "cardiology",
+                specialtyLabel: "Cardiology",
+                hospital: "Ruby Hall Clinic",
+                subSpecialty: "Complex Cardiac Interventions & Valvular Disease",
+                experience: "30+ Years",
+                rating: "4.8",
+                contact: "+91 20 6645 5100",
+                about: "Highly experienced cardiologist and researcher with numerous successful interventional protocols across India."
+            },
+            {
+                id: "cardio-3",
+                name: "Dr. Abhijeet Palshikar",
+                qualification: "MD, DM (Cardiology)",
+                specialty: "cardiology",
+                specialtyLabel: "Cardiology",
+                hospital: "Sahyadri Hospital",
+                subSpecialty: "Transcatheter Aortic Valve Implantation (TAVI/TAVR)",
+                experience: "22+ Years",
+                rating: "4.8",
+                contact: "+91 20 6721 3000",
+                about: "Director of Cardiology at Sahyadri Hospitals. Leading expert in advanced non-surgical valve replacements."
+            },
+            {
+                id: "cardio-4",
+                name: "Dr. Priya Palimkar",
+                qualification: "MD, DM, DNB",
+                specialty: "cardiology",
+                specialtyLabel: "Cardiology",
+                hospital: "Jehangir Hospital",
+                subSpecialty: "Pediatric & Adult Interventional Cardiology",
+                experience: "18+ Years",
+                rating: "4.7",
+                contact: "+91 20 6681 9999",
+                about: "Specialized in structural heart defects, pacemaker implants, and radial access coronary angioplasties."
+            },
+            {
+                id: "cardio-5",
+                name: "Dr. C. N. Makhale",
+                qualification: "MD, DM (Cardiology)",
+                specialty: "cardiology",
+                specialtyLabel: "Cardiology",
+                hospital: "Deenanath Mangeshkar Hospital",
+                subSpecialty: "Complex Angioplasty & Cardiac Pacing",
+                experience: "25+ Years",
+                rating: "4.8",
+                contact: "+91 20 4015 1000",
+                about: "In-charge of Cardiac Cath Lab at Deenanath. Master of high-risk complex coronary interventions."
+            },
+            {
+                id: "cardio-6",
+                name: "Dr. Suhas Hardas",
+                qualification: "MD, DM, FACC",
+                specialty: "cardiology",
+                specialtyLabel: "Cardiology",
+                hospital: "Manipal Hospital",
+                subSpecialty: "Adult Preventive & Interventional Cardiology",
+                experience: "24+ Years",
+                rating: "4.7",
+                contact: "+91 20 6165 6666",
+                about: "Renowned practitioner advocating for comprehensive preventive cardiology paired with modern stent therapies."
+            },
+
+            // ONCOLOGY (6 Doctors)
+            {
+                id: "onco-1",
+                name: "Dr. Minish Jain",
+                qualification: "MD (Medicine), DNB (Medical Oncology)",
+                specialty: "oncology",
+                specialtyLabel: "Oncology",
+                hospital: "Ruby Hall Clinic",
+                subSpecialty: "Solid Tumors, Chemotherapy & Immunotherapy",
+                experience: "28+ Years",
+                rating: "4.9",
+                contact: "+91 20 6645 5100",
+                about: "One of the absolute top medical oncologists in Western India. Leads personalized chemotherapy and targeted therapy programs."
+            },
+            {
+                id: "onco-2",
+                name: "Dr. Shona Nag",
+                qualification: "MD, Senior Medical Oncologist",
+                specialty: "oncology",
+                specialtyLabel: "Oncology",
+                hospital: "Sahyadri Hospital",
+                subSpecialty: "Breast Cancer & Gynaecologic Oncology",
+                experience: "26+ Years",
+                rating: "4.9",
+                contact: "+91 20 6721 3000",
+                about: "Highly vocal advocate for cancer awareness and a highly respected expert specializing in breast cancer therapies."
+            },
+            {
+                id: "onco-3",
+                name: "Dr. Tushar Patil",
+                qualification: "MD, DM (Medical Oncology)",
+                specialty: "oncology",
+                specialtyLabel: "Oncology",
+                hospital: "Sahyadri Hospital",
+                subSpecialty: "Precision Medicine & Targeted Therapies",
+                experience: "15+ Years",
+                rating: "4.7",
+                contact: "+91 20 6721 3000",
+                about: "Specializes in tailored genetic sequencing and matching tumors with precise molecular-targeted medications."
+            },
+            {
+                id: "onco-4",
+                name: "Dr. C. B. Koppiker",
+                qualification: "MS, Surgical Oncologist",
+                specialty: "oncology",
+                specialtyLabel: "Oncology",
+                hospital: "Jehangir Hospital",
+                subSpecialty: "Oncoplasty & Breast Cancer Surgery",
+                experience: "30+ Years",
+                rating: "4.8",
+                contact: "+91 20 6681 9999",
+                about: "Global pioneer in breast oncoplasty, combining cancer clearance with advanced aesthetic breast preservation."
+            },
+            {
+                id: "onco-5",
+                name: "Dr. Sameer Melinkeri",
+                qualification: "MD, DM (Hematology-Oncology)",
+                specialty: "oncology",
+                specialtyLabel: "Oncology",
+                hospital: "Deenanath Mangeshkar Hospital",
+                subSpecialty: "Leukemia, Lymphoma & Bone Marrow Transplant",
+                experience: "20+ Years",
+                rating: "4.8",
+                contact: "+91 20 4015 1000",
+                about: "Chief of Bone Marrow Transplant unit at Deenanath. Exceptionally qualified in blood-related malignancies."
+            },
+            {
+                id: "onco-6",
+                name: "Dr. Chetan Deshmukh",
+                qualification: "MD, DNB (Medical Oncology)",
+                specialty: "oncology",
+                specialtyLabel: "Oncology",
+                hospital: "Deenanath Mangeshkar Hospital",
+                subSpecialty: "Gastrointestinal & Lung Cancers",
+                experience: "16+ Years",
+                rating: "4.7",
+                contact: "+91 20 4015 1000",
+                about: "Highly active academician and medical oncologist specializing in combination therapies for advanced solid cancers."
+            },
+
+            // NEPHROLOGY (6 Doctors)
+            {
+                id: "nephro-1",
+                name: "Dr. Abhay Sadre",
+                qualification: "MD, DNB (Nephrology)",
+                specialty: "nephrology",
+                specialtyLabel: "Nephrology",
+                hospital: "Ruby Hall Clinic",
+                subSpecialty: "Kidney Transplant, Chronic Kidney Disease (CKD)",
+                experience: "25+ Years",
+                rating: "4.9",
+                contact: "+91 20 6645 5100",
+                about: "Director of Nephrology. Widely referred in Western Maharashtra for complex renal transplantations."
+            },
+            {
+                id: "nephro-2",
+                name: "Dr. Valentine Lobo",
+                qualification: "MD, DM (Nephrology)",
+                specialty: "nephrology",
+                specialtyLabel: "Nephrology",
+                hospital: "Jehangir Hospital",
+                subSpecialty: "Glomerular Diseases & Transplant Immunobiology",
+                experience: "24+ Years",
+                rating: "4.8",
+                contact: "+91 20 6681 9999",
+                about: "Highly scholastic nephrologist with deeper focus on treating rare autoimmune renal problems."
+            },
+            {
+                id: "nephro-3",
+                name: "Dr. Tushar Dighe",
+                qualification: "MD, DNB (Nephrology)",
+                specialty: "nephrology",
+                specialtyLabel: "Nephrology",
+                hospital: "Deenanath Mangeshkar Hospital",
+                subSpecialty: "Critical Care Nephrology & Dialysis Management",
+                experience: "22+ Years",
+                rating: "4.8",
+                contact: "+91 20 4015 1000",
+                about: "Heads the massive hemodialysis infrastructure at DMH. Focuses on patient-centric slow progression of renal failure."
+            },
+            {
+                id: "nephro-4",
+                name: "Dr. Sachin Soni",
+                qualification: "MD, DM, DNB (Nephrology)",
+                specialty: "nephrology",
+                specialtyLabel: "Nephrology",
+                hospital: "Manipal Hospital",
+                subSpecialty: "Interventional Nephrology & Kidney Biopsies",
+                experience: "16+ Years",
+                rating: "4.7",
+                contact: "+91 20 6165 6666",
+                about: "Expert in dialysis access creation, fistuloplasty, and running successful intensive transplant programs."
+            },
+            {
+                id: "nephro-5",
+                name: "Dr. Shrinivas Ambike",
+                qualification: "MD, DNB (Nephrology)",
+                specialty: "nephrology",
+                specialtyLabel: "Nephrology",
+                hospital: "Sahyadri Hospital",
+                subSpecialty: "Hypertension & Diabetic Nephropathy",
+                experience: "20+ Years",
+                rating: "4.7",
+                contact: "+91 20 6721 3000",
+                about: "Focuses deeply on treating high-pressure-induced renal decline and preventive diabetic care plans."
+            },
+            {
+                id: "nephro-6",
+                name: "Dr. Atul Sajgure",
+                qualification: "MD, DM, DNB (Nephrology)",
+                specialty: "nephrology",
+                specialtyLabel: "Nephrology",
+                hospital: "Jupiter Hospital",
+                subSpecialty: "Cadaveric Kidney Transplant",
+                experience: "15+ Years",
+                rating: "4.8",
+                contact: "+91 20 2725 3333",
+                about: "A dynamically progressive transplant specialist with outstanding graft survival metrics at Jupiter."
+            },
+
+            // NEUROLOGY (6 Doctors)
+            {
+                id: "neuro-1",
+                name: "Dr. Rajas Deshpande",
+                qualification: "MD, DNB (Neurology), Fellowship London",
+                specialty: "neurology",
+                specialtyLabel: "Neurology",
+                hospital: "Jupiter Hospital",
+                subSpecialty: "Parkinson's, Stroke & Clinical Neurosciences",
+                experience: "23+ Years",
+                rating: "4.9",
+                contact: "+91 20 2725 3333",
+                about: "Director of Neurology. Extensively published specialist handling difficult-to-diagnose neurological anomalies."
+            },
+            {
+                id: "neuro-2",
+                name: "Dr. Rahul Kulkarni",
+                qualification: "MD, DM (Neurology)",
+                specialty: "neuro-2",
+                specialty: "neurology",
+                specialtyLabel: "Neurology",
+                hospital: "Deenanath Mangeshkar Hospital",
+                subSpecialty: "Epilepsy Management & Electrophysiology",
+                experience: "21+ Years",
+                rating: "4.8",
+                contact: "+91 20 4015 1000",
+                about: "Key consultant neurologist at DMH. Renowned for pediatric neurology and long-term epilepsy management solutions."
+            },
+            {
+                id: "neuro-3",
+                name: "Dr. Sandeep Patil",
+                qualification: "MD, DM (Neurology)",
+                specialty: "neurology",
+                specialtyLabel: "Neurology",
+                hospital: "Sahyadri Hospital",
+                subSpecialty: "Stroke Interventions & Thrombolysis",
+                experience: "18+ Years",
+                rating: "4.7",
+                contact: "+91 20 6721 3000",
+                about: "Instrumental in running the rapid-action stroke response unit at Sahyadri Hospitals."
+            },
+            {
+                id: "neuro-4",
+                name: "Dr. Soumya Chandrasekhar",
+                qualification: "MD, DM (Neurology)",
+                specialty: "neurology",
+                specialtyLabel: "Neurology",
+                hospital: "Manipal Hospital",
+                subSpecialty: "Demyelinating Diseases & Multiple Sclerosis",
+                experience: "15+ Years",
+                rating: "4.7",
+                contact: "+91 20 6165 6666",
+                about: "Highly active clinician investigating neuro-immunology, auto-immune central nervous systems, and neuropathies."
+            },
+            {
+                id: "neuro-5",
+                name: "Dr. Nilesh Bhandari",
+                qualification: "MD, DM (Neurology)",
+                specialty: "neurology",
+                specialtyLabel: "Neurology",
+                hospital: "Jehangir Hospital",
+                subSpecialty: "Headache Medicine & Botulinum Toxin Injection",
+                experience: "16+ Years",
+                rating: "4.7",
+                contact: "+91 20 6681 9999",
+                about: "Renowned expert for intractable migraine pathways and specialized movement disorder therapeutics."
+            },
+            {
+                id: "neuro-6",
+                name: "Dr. Sunil Bandishti",
+                qualification: "MD, DM (Neurology)",
+                specialty: "neurology",
+                specialtyLabel: "Neurology",
+                hospital: "MJM Hospital",
+                subSpecialty: "Neuro-degenerative Conditions & Dementia",
+                experience: "20+ Years",
+                rating: "4.6",
+                contact: "+91 20 2551 2222",
+                about: "Focuses deeply on cognitive impairments and aging-related brain disorders at MJM Hospital and Ruby Hall Clinic."
+            },
+
+            // PULMONOLOGY / RESPIRATORY (6 Doctors)
+            {
+                id: "pulmo-1",
+                name: "Dr. Mahavir Modi",
+                qualification: "MD, DNB (Chest Medicine)",
+                specialty: "pulmonology",
+                specialtyLabel: "Pulmonology",
+                hospital: "Ruby Hall Clinic",
+                subSpecialty: "Sleep Apnea, Interstitial Lung Disease (ILD)",
+                experience: "16+ Years",
+                rating: "4.8",
+                contact: "+91 20 6645 5100",
+                about: "A leading pulmonology specialist with deep interventions in managing asthma, severe COPD, and respiratory failure."
+            },
+            {
+                id: "pulmo-2",
+                name: "Dr. Nitin Abhyankar",
+                qualification: "MD, DTCD",
+                specialty: "pulmonology",
+                specialtyLabel: "Pulmonology",
+                hospital: "Deenanath Mangeshkar Hospital",
+                subSpecialty: "Advanced Bronchoscopy & Tuberculosis Treatment",
+                experience: "30+ Years",
+                rating: "4.9",
+                contact: "+91 20 4015 1000",
+                about: "Doyen of Chest Medicine in Pune. Provides deeply analytical diagnostic workups for chronic respiratory issues."
+            },
+            {
+                id: "pulmo-3",
+                name: "Dr. Himanshu Pophale",
+                qualification: "MD (Chest Physician)",
+                specialty: "pulmonology",
+                specialtyLabel: "Pulmonology",
+                hospital: "Deenanath Mangeshkar Hospital",
+                subSpecialty: "Pulmonary Hypertension & Critical Care",
+                experience: "18+ Years",
+                rating: "4.7",
+                contact: "+91 20 4015 1000",
+                about: "Highly active ICU lung specialist managing acute distress syndromes (ARDS) and critical care ventilator patients."
+            },
+            {
+                id: "pulmo-4",
+                name: "Dr. Sameer Arbat",
+                qualification: "MD (Pulmonologist)",
+                specialty: "pulmonology",
+                specialtyLabel: "Pulmonology",
+                hospital: "Sahyadri Hospital",
+                subSpecialty: "Interventional Pulmonology & Cryobiopsy",
+                experience: "12+ Years",
+                rating: "4.7",
+                contact: "+91 20 6721 3000",
+                about: "Pioneered several state-of-the-art diagnostic lung biopsy methodologies in Maharashtra."
+            },
+            {
+                id: "pulmo-5",
+                name: "Dr. Snigdha Sabharwal",
+                qualification: "MD (Pulmonology)",
+                specialty: "pulmonology",
+                specialtyLabel: "Pulmonology",
+                hospital: "Manipal Hospital",
+                subSpecialty: "Allergy, Immunology & Bronchial Asthma",
+                experience: "10+ Years",
+                rating: "4.6",
+                contact: "+91 20 6165 6666",
+                about: "Specialized in long-term control of reactive airways, pediatric asthma, and allergy immunotherapy."
+            },
+            {
+                id: "pulmo-6",
+                name: "Dr. Swapnil Kulkarni",
+                qualification: "DNB (Pulmonology)",
+                specialty: "pulmonology",
+                specialtyLabel: "Pulmonology",
+                hospital: "Jupiter Hospital",
+                subSpecialty: "Thoracic Oncology & Pleural Pathologies",
+                experience: "14+ Years",
+                rating: "4.7",
+                contact: "+91 20 2725 3333",
+                about: "Dedicated clinician with deep expertise in managing lung cancer diagnostic biopsies and fluid accumulations."
+            },
+
+            // GASTROENTEROLOGY (6 Doctors)
+            {
+                id: "gastro-1",
+                name: "Dr. Harshal Gadhikar",
+                qualification: "MD, DM (Gastroenterology)",
+                specialty: "gastroenterology",
+                specialtyLabel: "Gastroenterology",
+                hospital: "Deenanath Mangeshkar Hospital",
+                subSpecialty: "Hepatology & Advanced Endoscopy",
+                experience: "25+ Years",
+                rating: "4.9",
+                contact: "+91 20 4015 1000",
+                about: "Head of Gastroenterology at DMH. Premier specialist for inflammatory bowel diseases (IBD) and liver failures."
+            },
+            {
+                id: "gastro-2",
+                name: "Dr. Amit Maydeo",
+                qualification: "MD, MS (Gastroenterology)",
+                specialty: "gastroenterology",
+                specialtyLabel: "Gastroenterology",
+                hospital: "Jupiter Hospital",
+                subSpecialty: "Therapeutic Endoscopy & ERCP",
+                experience: "32+ Years",
+                rating: "4.9",
+                contact: "+91 20 2725 3333",
+                about: "Globally acclaimed endoscopic surgeon. Excels in complex bile duct stones removal and non-surgical gastric procedures."
+            },
+            {
+                id: "gastro-3",
+                name: "Dr. Parimal Lawate",
+                qualification: "MD, DM (Gastroenterology)",
+                specialty: "gastroenterology",
+                specialtyLabel: "Gastroenterology",
+                hospital: "Jehangir Hospital",
+                subSpecialty: "Luminal Diseases & Pancreatic Pathology",
+                experience: "24+ Years",
+                rating: "4.8",
+                contact: "+91 20 6681 9999",
+                about: "Highly trusted clinical gastroenterologist managing chronic reflux, metabolic liver, and pancreatic disorders."
+            },
+            {
+                id: "gastro-4",
+                name: "Dr. Sharan Narute",
+                qualification: "MS, MCh (Surgical Gastroenterology)",
+                specialty: "gastroenterology",
+                specialtyLabel: "Gastroenterology",
+                hospital: "Sahyadri Hospital",
+                subSpecialty: "GI Oncology Surgery & Liver Transplant",
+                experience: "15+ Years",
+                rating: "4.8",
+                contact: "+91 20 6721 3000",
+                about: "Acclaimed GI surgical oncologist, dedicated to performing minimally invasive bowel and liver resections."
+            },
+            {
+                id: "gastro-5",
+                name: "Dr. Lalit Shimpi",
+                qualification: "MD, DNB (Gastroenterology)",
+                specialty: "gastroenterology",
+                specialtyLabel: "Gastroenterology",
+                hospital: "Ruby Hall Clinic",
+                subSpecialty: "Chronic Liver Disease Management",
+                experience: "21+ Years",
+                rating: "4.7",
+                contact: "+91 20 6645 5100",
+                about: "Senior consultant with excellent track record in treating Hepatitis B/C, fatty liver, and cirrhotic complications."
+            },
+            {
+                id: "gastro-6",
+                name: "Dr. Amol Bapaye",
+                qualification: "MD, DM (Gastroenterology)",
+                specialty: "gastroenterology",
+                specialtyLabel: "Gastroenterology",
+                hospital: "Deenanath Mangeshkar Hospital",
+                subSpecialty: "Third Space Endoscopy (POEM, ESD)",
+                experience: "22+ Years",
+                rating: "4.8",
+                contact: "+91 20 4015 1000",
+                about: "Internationally recognized endoscopic master specializing in Achalasia Cardia and early GI cancer clearances."
+            },
+
+            // GYNAECOLOGY (6 Doctors)
+            {
+                id: "gyn-1",
+                name: "Dr. Sunita Tandulwadkar",
+                qualification: "MD, FICOG, FICS",
+                specialty: "gynaecology",
+                specialtyLabel: "Gynaecology & Obstetrics",
+                hospital: "Ruby Hall Clinic",
+                subSpecialty: "Advanced Gynaecologic Endoscopy & IVF",
+                experience: "30+ Years",
+                rating: "4.9",
+                contact: "+91 20 6645 5100",
+                about: "Chief of OB-GYN & IVF at Ruby Hall Clinic. Nationally recognized pioneer in laparoscopic hysterectomies and robotic-assisted pelvic surgery."
+            },
+            {
+                id: "gyn-2",
+                name: "Dr. Jyoti Unni",
+                qualification: "MD, DGO",
+                specialty: "gynaecology",
+                specialtyLabel: "Gynaecology & Obstetrics",
+                hospital: "Jehangir Hospital",
+                subSpecialty: "High-Risk Obstetrics & Menopause Management",
+                experience: "28+ Years",
+                rating: "4.8",
+                contact: "+91 20 6681 9999",
+                about: "Senior Consultant Obstetrician and Gynaecologist at Jehangir Hospital. Renowned expert in managing complex, high-risk pregnancies."
+            },
+            {
+                id: "gyn-3",
+                name: "Dr. Vaishali Korde-Nayak",
+                qualification: "MD, DNB, FCPS",
+                specialty: "gynaecology",
+                specialtyLabel: "Gynaecology & Obstetrics",
+                hospital: "Sahyadri Hospital",
+                subSpecialty: "Infertility Treatment & High-Risk Pregnancy Care",
+                experience: "22+ Years",
+                rating: "4.8",
+                contact: "+91 20 6721 3000",
+                about: "Highly respected fertility specialist and obstetrician. Expert in recurrent pregnancy loss and custom high-risk pregnancy protocols."
+            },
+            {
+                id: "gyn-4",
+                name: "Dr. Charuchandra Joshi",
+                qualification: "MD, DGO",
+                specialty: "gynaecology",
+                specialtyLabel: "Gynaecology & Obstetrics",
+                hospital: "Deenanath Mangeshkar Hospital",
+                subSpecialty: "Urogynaecology & Pelvic Reconstructive Surgery",
+                experience: "26+ Years",
+                rating: "4.8",
+                contact: "+91 20 4015 1000",
+                about: "Heads Gynaecology at Deenanath. Master in vaginal surgery, urogynaecology, and pelvic floor repairs."
+            },
+            {
+                id: "gyn-5",
+                name: "Dr. Girija Wagh",
+                qualification: "MD, FICOG",
+                specialty: "gynaecology",
+                specialtyLabel: "Gynaecology & Obstetrics",
+                hospital: "Jupiter Hospital",
+                subSpecialty: "High-Risk Pregnancy Care & Perinatology",
+                experience: "25+ Years",
+                rating: "4.8",
+                contact: "+91 20 2725 3333",
+                about: "Prominent academician and clinician in Pune. Leads specialized clinics for pregnancy-induced hypertension."
+            },
+            {
+                id: "gyn-6",
+                name: "Dr. Meenu Agarwal",
+                qualification: "MD, DGO, Fellowship in Endoscopy (Germany)",
+                specialty: "gynaecology",
+                specialtyLabel: "Gynaecology & Obstetrics",
+                hospital: "Ruby Hall Clinic",
+                subSpecialty: "Keyhole Gynaecologic Surgery & Endometriosis",
+                experience: "20+ Years",
+                rating: "4.7",
+                contact: "+91 20 6645 5100",
+                about: "Expert operative laparoscopist specializing in deep infiltrating endometriosis, fibroid removals, and cystectomies."
+            }
+        ];
+
+        // Directory Management State
+        const state = {
+            activeSpecialty: 'all',
+            activeHospital: 'all',
+            searchQuery: '',
+            shortlist: [],
+            compareModalOpen: false,
+            referredDoctorId: null
+        };
+
+        const specialtiesList = [
+            { id: 'all', label: '🌟 All Specialties' },
+            { id: 'cardiology', label: '🫀 Cardiology' },
+            { id: 'oncology', label: '🎗️ Oncology' },
+            { id: 'nephrology', label: '🩺 Nephrology' },
+            { id: 'neurology', label: '🧠 Neurology' },
+            { id: 'pulmonology', label: '🫁 Pulmonology' },
+            { id: 'gastroenterology', label: '🧪 Gastroenterology' },
+            { id: 'gynaecology', label: '🤰 Gynaecology' }
+        ];
+
+        // Page Initialization
+        window.onload = function() {
+            renderSpecialtyTabs();
+            renderDoctors();
+            checkUrlParameters();
+        };
+
+        // URL Param matching
+        function checkUrlParameters() {
+            try {
+                const params = new URLSearchParams(window.location.search);
+                const specialtyParam = params.get('specialty');
+                const hospitalParam = params.get('hospital');
+                
+                if (specialtyParam) {
+                    const foundSpec = specialtiesList.find(s => s.id.toLowerCase() === specialtyParam.toLowerCase());
+                    if (foundSpec) {
+                        state.activeSpecialty = foundSpec.id;
+                    }
+                }
+                
+                if (hospitalParam) {
+                    const select = document.getElementById('hospital-select');
+                    if (select) {
+                        for (let i = 0; i < select.options.length; i++) {
+                            const option = select.options[i];
+                            if (option.value.toLowerCase().includes(hospitalParam.toLowerCase())) {
+                                state.activeHospital = option.value;
+                                select.value = option.value;
+                                break;
+                            }
+                        }
+                    }
+                }
+                
+                renderSpecialtyTabs();
+                renderDoctors();
+            } catch (err) {
+                console.warn("Could not read URL parameters:", err);
+            }
+        }
+
+        // Render Tabs
+        function renderSpecialtyTabs() {
+            const container = document.getElementById('specialty-tabs-container');
+            container.innerHTML = '';
+
+            specialtiesList.forEach(spec => {
+                const isActive = state.activeSpecialty === spec.id;
+                const tab = document.createElement('button');
+                tab.onclick = () => setSpecialtyFilter(spec.id);
+                tab.className = `px-4 py-2.5 text-xs font-bold rounded-xl transition-all ${
+                    isActive 
+                    ? 'bg-brand-600 text-white shadow-md shadow-brand-500/10' 
+                    : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
+                }`;
+                tab.textContent = spec.label;
+                container.appendChild(tab);
+            });
+        }
+
+        // Change Specialty Filter
+        function setSpecialtyFilter(id) {
+            state.activeSpecialty = id;
+            renderSpecialtyTabs();
+            renderDoctors();
+        }
+
+        // Handle Hero select parameters
+        function handleHeroSearch() {
+            const specVal = document.getElementById('hero-specialty').value;
+            const hospVal = document.getElementById('hero-hospital').value;
+            
+            state.activeSpecialty = specVal;
+            state.activeHospital = hospVal;
+            
+            document.getElementById('hospital-select').value = hospVal;
+            
+            renderSpecialtyTabs();
+            renderDoctors();
+
+            document.getElementById('doctor-directory').scrollIntoView({ behavior: 'smooth' });
+            showToast('Filters adjusted successfully!', 'success');
+        }
+
+        // Filter triggers from keyup/change
+        function filterDoctors() {
+            state.searchQuery = document.getElementById('search-input').value.toLowerCase();
+            state.activeHospital = document.getElementById('hospital-select').value;
+            renderDoctors();
+        }
+
+        // Reset Filters
+        function resetFilters() {
+            document.getElementById('search-input').value = '';
+            document.getElementById('hospital-select').value = 'all';
+            state.searchQuery = '';
+            state.activeHospital = 'all';
+            state.activeSpecialty = 'all';
+            renderSpecialtyTabs();
+            renderDoctors();
+            showToast('All filters reset to default.', 'info');
+        }
+
+        // Render Doctor Cards
+        function renderDoctors() {
+            const grid = document.getElementById('doctor-grid');
+            const emptyState = document.getElementById('empty-state');
+            grid.innerHTML = '';
+
+            const filtered = doctorDatabase.filter(doc => {
+                const matchesSpecialty = state.activeSpecialty === 'all' || doc.specialty === state.activeSpecialty;
+                const matchesHospital = state.activeHospital === 'all' || doc.hospital === state.activeHospital;
+                const matchesQuery = !state.searchQuery || 
+                    doc.name.toLowerCase().includes(state.searchQuery) ||
+                    doc.qualification.toLowerCase().includes(state.searchQuery) ||
+                    doc.subSpecialty.toLowerCase().includes(state.searchQuery) ||
+                    doc.about.toLowerCase().includes(state.searchQuery);
+
+                return matchesSpecialty && matchesHospital && matchesQuery;
+            });
+
+            document.getElementById('results-count').textContent = `Showing ${filtered.length} doctor${filtered.length !== 1 ? 's' : ''}`;
+
+            if (filtered.length === 0) {
+                grid.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            grid.classList.remove('hidden');
+            emptyState.classList.add('hidden');
+
+            filtered.forEach(doc => {
+                const isShortlisted = state.shortlist.some(item => item.id === doc.id);
+                const card = document.createElement('div');
+                card.className = "bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm flex flex-col justify-between hover:shadow-xl hover:border-brand-100 transition-all duration-300 relative group";
+
+                card.innerHTML = `
+                    <div>
+                        <!-- Specialty & Rating Header -->
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-brand-50 border border-brand-100 text-brand-700 text-xs font-bold rounded-lg uppercase tracking-wider">
+                                <i class="fa-solid fa-stethoscope"></i> ${doc.specialtyLabel}
+                            </span>
+                            <div class="flex items-center gap-1 text-xs font-bold text-amber-500">
+                                <i class="fa-solid fa-star"></i> ${doc.rating}
+                            </div>
+                        </div>
+
+                        <!-- Doctor Profile Info -->
+                        <h4 class="font-heading font-extrabold text-lg text-slate-900 leading-snug group-hover:text-brand-700 transition-colors">${doc.name}</h4>
+                        <p class="text-xs text-brand-600 font-semibold mt-0.5">${doc.qualification}</p>
+                        <p class="text-xs text-slate-400 mt-2 font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-building-shield"></i> ${doc.hospital}
+                        </p>
+
+                        <!-- Sub-Focus details -->
+                        <div class="bg-slate-50 rounded-xl p-3 border border-slate-100 my-4 text-xs">
+                            <p class="text-[10px] text-slate-400 font-extrabold uppercase tracking-wider">Primary Clinical Sub-Focus</p>
+                            <p class="font-bold text-slate-700 mt-0.5">${doc.subSpecialty}</p>
+                        </div>
+
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">${doc.about}</p>
+                    </div>
+
+                    <!-- Bottom CTA Area -->
+                    <div class="border-t border-slate-100 pt-4 flex flex-col gap-2">
+                        <div class="flex items-center justify-between text-xs text-slate-500 mb-1">
+                            <span>Experience: <strong>${doc.experience}</strong></span>
+                            <span>Direct Match Active</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <!-- Shortlist Toggle -->
+                            <button onclick="toggleShortlist('${doc.id}')" class="py-2.5 px-3 border border-slate-200 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 hover:bg-slate-50 ${
+                                isShortlisted ? 'bg-brand-50 border-brand-200 text-brand-700' : 'text-slate-600'
+                            }">
+                                <i class="${isShortlisted ? 'fa-solid' : 'fa-regular'} fa-bookmark"></i>
+                                ${isShortlisted ? 'Saved' : 'Shortlist'}
+                            </button>
+                            <!-- Request Case Matching -->
+                            <button onclick="triggerConsultation('${doc.id}')" class="py-2.5 px-3 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition-all text-center flex items-center justify-center gap-1.5 shadow-md shadow-slate-900/10">
+                                <i class="fa-solid fa-arrows-spin text-[10px]"></i> Get Case Match
+                            </button>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Shortlisting Logic
+        function toggleShortlist(id) {
+            const index = state.shortlist.findIndex(item => item.id === id);
+            const doctor = doctorDatabase.find(doc => doc.id === id);
+
+            if (index > -1) {
+                state.shortlist.splice(index, 1);
+                showToast(`Removed ${doctor.name} from comparisons.`, 'info');
+            } else {
+                if (state.shortlist.length >= 3) {
+                    showToast('You can compare a maximum of 3 specialists side-by-side.', 'warning');
+                    return;
+                }
+                state.shortlist.push(doctor);
+                showToast(`Added ${doctor.name} to comparisons.`, 'success');
+            }
+
+            renderDoctors();
+            updateCompareDrawer();
+        }
+
+        // Clear Shortlist
+        function clearShortlist() {
+            state.shortlist = [];
+            renderDoctors();
+            updateCompareDrawer();
+            showToast('Shortlisted doctors cleared.', 'info');
+        }
+
+        // Render Compare Bottom Drawer
+        function updateCompareDrawer() {
+            const drawer = document.getElementById('compare-drawer');
+            const avatarsContainer = document.getElementById('shortlist-avatars');
+            avatarsContainer.innerHTML = '';
+
+            if (state.shortlist.length === 0) {
+                drawer.classList.add('translate-y-full');
+                return;
+            }
+
+            drawer.classList.remove('translate-y-full');
+
+            state.shortlist.forEach(doc => {
+                const avatar = document.createElement('div');
+                avatar.className = "flex items-center gap-2 bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-700 shadow-sm relative pr-8";
+                avatar.innerHTML = `
+                    <span class="w-2 h-2 rounded-full bg-brand-500"></span>
+                    <span>${doc.name}</span>
+                    <button onclick="toggleShortlist('${doc.id}')" class="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 hover:text-red-500 transition-colors">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                `;
+                avatarsContainer.appendChild(avatar);
+            });
+        }
+
+        // Trigger side comparison modal
+        function toggleCompareModal() {
+            const modal = document.getElementById('compare-modal');
+            state.compareModalOpen = !state.compareModalOpen;
+
+            if (state.compareModalOpen) {
+                modal.classList.remove('hidden');
+                renderCompareDetails();
+            } else {
+                modal.classList.add('hidden');
+            }
+        }
+
+        // Render Side Comparison Columns
+        function renderCompareDetails() {
+            const container = document.getElementById('compare-grid-container');
+            container.innerHTML = '';
+
+            state.shortlist.forEach(doc => {
+                const col = document.createElement('div');
+                col.className = "bg-slate-50 border border-slate-200 p-6 rounded-2xl flex flex-col justify-between";
+                col.innerHTML = `
+                    <div class="space-y-4">
+                        <div class="border-b border-slate-200 pb-4">
+                            <span class="text-[10px] font-extrabold uppercase bg-brand-50 border border-brand-100 text-brand-800 px-2.5 py-1 rounded-md tracking-wider inline-block mb-2">${doc.specialtyLabel}</span>
+                            <h4 class="font-heading font-extrabold text-base text-slate-900">${doc.name}</h4>
+                            <p class="text-xs text-brand-600 mt-0.5">${doc.qualification}</p>
+                        </div>
+
+                        <div class="space-y-3 text-xs">
+                            <div>
+                                <p class="text-slate-400 font-bold uppercase text-[9px]">Hospital Affiliation</p>
+                                <p class="font-bold text-slate-800 mt-0.5">${doc.hospital}</p>
+                            </div>
+                            <div>
+                                <p class="text-slate-400 font-bold uppercase text-[9px]">Dedicated Focus</p>
+                                <p class="font-bold text-slate-800 mt-0.5">${doc.subSpecialty}</p>
+                            </div>
+                            <div>
+                                <p class="text-slate-400 font-bold uppercase text-[9px]">Experience Track</p>
+                                <p class="font-bold text-slate-800 mt-0.5">${doc.experience}</p>
+                            </div>
+                            <div>
+                                <p class="text-slate-400 font-bold uppercase text-[9px]">Description</p>
+                                <p class="text-slate-600 leading-relaxed mt-0.5">${doc.about}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 border-t border-slate-200 pt-4 space-y-2">
+                        <button onclick="triggerConsultationAndCloseModal('${doc.id}')" class="w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-1.5 shadow-md shadow-slate-900/10">
+                            <i class="fa-solid fa-arrows-spin"></i> Select Specialist
+                        </button>
+                        <button onclick="toggleShortlist('${doc.id}'); toggleCompareModal(); toggleCompareModal();" class="w-full py-2 border border-red-100 hover:bg-red-50 text-red-500 text-xs font-bold rounded-xl transition-all">
+                            Remove
+                        </button>
+                    </div>
+                `;
+                container.appendChild(col);
+            });
+        }
+
+        // Triage from inside comparison
+        function triggerConsultationAndCloseModal(id) {
+            toggleCompareModal();
+            triggerConsultation(id);
+        }
+
+        // Auto-fill form from card trigger
+        function triggerConsultation(docId) {
+            const doc = doctorDatabase.find(d => d.id === docId);
+            state.referredDoctorId = docId;
+
+            // Smooth Scroll to form
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+
+            // Fill inputs
+            const formSpec = document.getElementById('form-specialty');
+            formSpec.value = doc.specialtyLabel.includes("Gynaecology") ? "Gynaecology" : doc.specialtyLabel;
+
+            document.getElementById('form-preferred-hospital').value = doc.hospital;
+
+            // Show referred box
+            const refBox = document.getElementById('referred-doctor-box');
+            const refLabel = document.getElementById('referred-doctor-label');
+            refBox.classList.remove('hidden');
+            refLabel.innerHTML = `<i class="fa-solid fa-user-doctor mr-1"></i> Match requested for: <strong>${doc.name} (${doc.hospital})</strong>`;
+
+            showToast(`Form targeted for ${doc.name}.`, 'success');
+        }
+
+        // Clear Referred Doctor Selection
+        function clearReferredDoctor() {
+            state.referredDoctorId = null;
+            document.getElementById('referred-doctor-box').classList.add('hidden');
+            document.getElementById('referred-doctor-label').textContent = '';
+            showToast('Targeted doctor selection cleared.', 'info');
+        }
+
+        // File upload UI helper
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            const label = document.getElementById('upload-label');
+            const zone = document.getElementById('upload-zone');
+
+            if (file) {
+                label.innerHTML = `📄 <strong class="text-brand-600">${file.name}</strong> (${(file.size / (1024 * 1024)).toFixed(2)} MB)`;
+                zone.classList.remove('border-slate-200');
+                zone.classList.add('border-brand-500', 'bg-brand-50/50');
+                showToast('Clinical file successfully attached.', 'success');
+            }
+        }
+
+        // Form Submission handling
+        function handleFormSubmission(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('form-name').value;
+            const phone = document.getElementById('form-phone').value;
+            const spec = document.getElementById('form-specialty').value;
+            const file = document.getElementById('form-file').files[0];
+
+            let docReferenceText = "General specialty matchmaking requested.";
+            if (state.referredDoctorId) {
+                const doc = doctorDatabase.find(d => d.id === state.referredDoctorId);
+                docReferenceText = `Specific target: ${doc.name} (${doc.hospital})`;
+            }
+
+            // Create submission modal response message instead of using alert()
+            const successDiv = document.createElement('div');
+            successDiv.className = "fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4";
+            successDiv.innerHTML = `
+                <div class="bg-white rounded-2xl max-w-lg w-full p-8 shadow-2xl border border-slate-100 text-center space-y-6">
+                    <div class="w-16 h-16 bg-brand-100 text-brand-600 rounded-full flex items-center justify-center mx-auto text-2xl shadow-inner">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="font-heading font-extrabold text-2xl text-slate-900">Case Registered Safely</h3>
+                        <p class="text-xs text-slate-400">File Reference Token: #${Math.floor(Math.random() * 89999) + 10000}</p>
+                    </div>
+                    
+                    <div class="bg-slate-50 rounded-xl p-4 text-left text-xs text-slate-600 space-y-2.5 border border-slate-100">
+                        <p><strong>Patient Name:</strong> ${name}</p>
+                        <p><strong>Contact:</strong> ${phone}</p>
+                        <p><strong>Therapeutic Target:</strong> ${spec}</p>
+                        <p><strong>Clinical Route Reference:</strong> ${docReferenceText}</p>
+                        <p><strong>Report Attachment:</strong> ${file ? file.name : 'No documents attached'}</p>
+                    </div>
+
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Your clinical request has been securely queued. Our navigation team, supervised by Dr. Niraj Bafna (Pharm.D), will evaluate your diagnostic timelines, compile active therapeutic parameters, and facilitate scheduling with candidate specialty offices.
+                    </p>
+
+                    <button onclick="closeSuccessDialog(this)" class="w-full py-3 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition-all">
+                        Return to Portal
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(successDiv);
+
+            // Reset Form & state
+            document.getElementById('consult-form').reset();
+            clearReferredDoctor();
+            const label = document.getElementById('upload-label');
+            const zone = document.getElementById('upload-zone');
+            label.textContent = "Drag & drop files or click to browse";
+            zone.className = "border-2 border-dashed border-slate-200 rounded-xl p-4 text-center hover:bg-slate-50 transition-all cursor-pointer relative";
+        }
+
+        function closeSuccessDialog(button) {
+            const modal = button.closest('.fixed');
+            if (modal) {
+                modal.remove();
+            }
+        }
+
+        // Utility: Toast notification system
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `flex items-center gap-3 px-4 py-3 rounded-xl shadow-lg border text-xs font-bold transition-all duration-300 transform translate-x-12 opacity-0 bg-white pointer-events-auto max-w-sm ${
+                type === 'success' ? 'border-brand-200 text-brand-800' :
+                type === 'warning' ? 'border-amber-200 text-amber-800' : 'border-slate-200 text-slate-800'
+            }`;
+
+            const icon = type === 'success' ? '<i class="fa-solid fa-circle-check text-brand-500 text-base"></i>' :
+                         type === 'warning' ? '<i class="fa-solid fa-circle-exclamation text-amber-500 text-base"></i>' :
+                                              '<i class="fa-solid fa-circle-info text-slate-400 text-base"></i>';
+
+            toast.innerHTML = `
+                ${icon}
+                <div class="flex-1">${message}</div>
+                <button onclick="this.parentElement.remove()" class="text-slate-400 hover:text-slate-600">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            `;
+
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.remove('translate-x-12', 'opacity-0');
+            }, 50);
+
+            setTimeout(() => {
+                toast.classList.add('translate-x-12', 'opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 4500);
+        }
+
+        // Toggle mobile navbar menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+
+            if (menu.classList.contains('hidden')) {
+                icon.className = "fa-solid fa-bars text-xl";
+            } else {
+                icon.className = "fa-solid fa-xmark text-xl";
+            }
+        }
+
+        // FAQ accordion management
+        function toggleFaq(id) {
+            const answer = document.getElementById(`faq-answer-${id}`);
+            const chevron = document.getElementById(`faq-chevron-${id}`);
+
+            const isOpen = !answer.classList.contains('hidden');
+
+            if (isOpen) {
+                answer.classList.add('hidden');
+                chevron.classList.remove('rotate-180');
+            } else {
+                answer.classList.remove('hidden');
+                chevron.classList.add('rotate-180');
+            }
+        }
+    </script>
+</body>
+</html>
